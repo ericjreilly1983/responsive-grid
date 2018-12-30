@@ -1,0 +1,106 @@
+<!-- MY MOBILE RESPONSIVE GRID LAYOUTS -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mobile responsive grid layout - mobile first</title>
+	<style type="text/css">
+		.wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, [start] 1fr);
+  grid-gap: 20px;
+}
+
+.wrapper > * {
+  grid-column: start 1/ span 12;
+  border: 1px solid black;
+  background: skyblue;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+@media (min-width: 500px) {
+  .sidebar, .content {
+    grid-row: 3;
+  }
+  .sidebar {
+    grid-column: start / span 2;
+  }
+  .content {
+    grid-column: start 3/ span 10;
+  }
+  
+  .ad {
+    grid-column: start / span 2;
+    overflow: hidden;
+  }
+  
+  .footer {
+    grid-column: start 3/ span 10;
+  }
+}
+
+@media (min-width: 760px){
+ 
+  .nav {
+    grid-column: start / span 2;
+  }
+  
+  .content {
+    grid-row: 2;
+    grid-column: start 3 / span 8;
+  }
+  
+  .sidebar {
+    grid-row: 2;
+    grid-column: start 11 / span 2;
+  }
+  
+  .footer, .ad {
+    grid-column: start / span 12;
+  }
+  
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+	 
+	<header class="header">Header</header>
+
+	<nav class = "nav">
+	  <ul>
+	    <li>Link 1</li>
+	    <li>Link 2</li>
+	    <li>Link 3</li>
+	  </ul>
+	</nav>
+
+	<article class="content">
+	 <h1>Content Section</h1>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ipsa impedit deleniti officiis voluptatibus? Veniam ea assumenda natus ipsam similique molestiae. Quibusdam quia suscipit reprehenderit nobis! Ipsum eum sit et.</p>
+	<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum maiores dolores qui doloribus praesentium, aspernatur totam illo, porro tenetur nulla optio placeat recusandae vitae rerum! Perferendis non id placeat maiores.</p>
+	</article>
+
+	<aside class = "sidebar">Side Bar</aside>
+
+	<div class="ad">Advertisement</div>
+	  
+	<footer class="footer">Footer</footer>
+
+</div>
+</body>
+</html>
+
+
+
+
